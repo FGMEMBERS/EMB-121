@@ -1,0 +1,615 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>EMB-121A.ac</path>
+	<offsets>
+		<x-m> 0.0</x-m>             <!-- VRP at nose -->
+		<y-m> 0.0</y-m>             <!-- VRP at nose -->
+		<z-m> 0.0</z-m>             <!-- aligned by FDM gear, if model at the scale -->
+	</offsets>
+
+    
+
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery_update.new("Aircraft/EMB-121/Models/Liveries", 10);
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
+
+<!-- ################################################################## -->
+<!-- sombra do aviao  -->
+<!-- ################################################################## -->
+
+ <model>
+  <name>shadowOSG</name>
+  <path>Aircraft/EMB-121/Models/Shadow/shadow.xml</path>
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>1.3</z-m>
+    <pitch-deg>1.1</pitch-deg>
+  </offsets>
+</model>
+   
+<!-- ################################################################## -->
+<!-- *** MODELOS *** -->
+<!-- ################################################################## -->
+   <model>
+        <name>flightdeck_emb-121</name>
+        <path>Aircraft/EMB-121/Models/flightdeck/flightdeck.xml</path>
+        <offsets>
+            <x-m>2.70371</x-m>
+            <y-m>0</y-m>
+            <z-m>0.384313</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>flightdeck_emb-121</object-name>
+        <condition>
+            <equals>
+                <property>sim/current-view/internal</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+        
+    <animation>
+        <type>select</type>
+        <object-name>fuselage</object-name>
+        <condition>
+        	<not>
+	            <equals>
+	                <property>sim/current-view/internal</property>
+	                <value>true</value>
+	            </equals>
+            </not>
+        </condition>
+    </animation>
+    
+<!-- ################################################################## -->
+<!-- *** ANIMACOES *** -->
+<!-- ################################################################## -->
+<!-- Fans das helices -->
+ <animation>
+  <type>spin</type>
+  <object-name>pa_L</object-name>
+  <object-name>tf_pin_L</object-name>
+  <property>engines/engine[0]/thruster/rpm</property>
+  <factor>10</factor>   
+  <center>
+   <x-m>-2.74256</x-m>
+   <y-m>-2.49043</y-m>
+   <z-m>-0.0277092</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>pa_R</object-name>
+  <object-name>tf_pin_R</object-name>
+  <property>engines/engine[1]/thruster/rpm</property>
+  <factor>10</factor>   
+  <center>
+   <x-m>-2.74256</x-m>
+   <y-m>2.49043</y-m>
+   <z-m>-0.0277092</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+<!-- ###### -->
+<!-- Rudder -->
+<!-- ###### -->
+ <animation>
+  <type>rotate</type>
+  <object-name>rudder</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>22.5</factor>
+  <offset-deg>0</offset-deg>   
+	  <axis>
+	     <x1-m> 5.61592</x1-m>
+	     <y1-m>0.0</y1-m>
+	     <z1-m>0.95833</z1-m>
+	     <x2-m> 7.11503</x2-m>
+	     <y2-m>-0.0148801</y2-m>
+	     <z2-m>2.5907</z2-m>
+	  </axis>
+ </animation>
+
+<!-- ########## -->
+<!-- Elevators -->
+<!-- ########## -->
+ <animation>
+  <type>rotate</type>
+  <object-name>elevator_R</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-15</factor>
+  <offset-deg>0</offset-deg>   
+	  <axis>
+	     <x1-m> 7.97413</x1-m>
+	     <y1-m> 2.45826</y1-m>
+	     <z1-m>2.79839</z1-m>
+	     <x2-m> 7.42414</x2-m>
+	     <y2-m> 0.023667</y2-m>
+	     <z2-m>2.72849</z2-m>
+	  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>elevator_L</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>15</factor>
+  <offset-deg>0</offset-deg>   
+	  <axis>
+	     <x1-m> 7.97413</x1-m>
+	     <y1-m>-2.45826</y1-m>
+	     <z1-m>2.79839</z1-m>
+	     <x2-m> 7.42414</x2-m>
+	     <y2-m>-0.023667</y2-m>
+	     <z2-m>2.72849</z2-m>
+	  </axis>
+ </animation>
+
+<!-- ######## -->
+<!-- Ailerons -->
+<!-- ######## -->
+<!-- Externo -->
+  <animation>
+  <type>rotate</type>
+  <object-name>aileronesquerdo</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>30</factor>
+  <axis>
+     <x1-m> 0.746538</x1-m>
+     <y1-m>-6.995</y1-m>
+     <z1-m>0.289847</z1-m>
+     <x2-m> 0.902121</x2-m>
+     <y2-m>-4.89126</y2-m>
+     <z2-m>0.0232865</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ailerondireito</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>30</factor>
+  <axis>
+     <x1-m> 0.746538</x1-m>
+     <y1-m>6.995</y1-m>
+     <z1-m>0.289847</z1-m>
+     <x2-m> 0.902121</x2-m>
+     <y2-m>4.89126</y2-m>
+     <z2-m>0.0232865</z2-m>
+  </axis>
+ </animation> 
+ 
+<!-- ##### -->
+<!-- Flaps -->
+<!-- ##### -->
+ <animation>
+  <type>rotate</type>
+  <object-name>flaps_L</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>30</factor>
+  <axis>
+     <x1-m> 0.933639</x1-m>
+     <y1-m>-4.84372</y1-m>
+     <z1-m>0.0153905</z1-m>
+     <x2-m> 1.22511</x2-m>
+     <y2-m>-1.17302</y2-m>
+     <z2-m>-0.461238</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>flaps_R</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>-30</factor>
+  <axis>
+     <x1-m> 0.933639</x1-m>
+     <y1-m>4.84372</y1-m>
+     <z1-m>0.0153905</z1-m>
+     <x2-m> 1.22511</x2-m>
+     <y2-m>1.17302</y2-m>
+     <z2-m>-0.461238</z2-m>
+  </axis>
+ </animation>
+ 
+<!-- ####################### --> 
+<!-- Trem de pouso dianteiro -->
+<!-- ####################### --> 
+
+	<!-- Eixo do trem -->
+ <animation>
+  <type>rotate</type>
+		  <object-name>frontgear</object-name>
+		  <object-name>frontgear_tire</object-name>
+		  <object-name>lampada1</object-name>
+		  <object-name>lampada2</object-name>
+		  <object-name>LeftnoseLandinglight</object-name>
+		  <object-name>RightnoseLandinglight</object-name>
+  <property>gear/gear[0]/position-norm</property>
+   <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>105.0</dep>
+    </entry>
+    <entry>
+      <ind>0.35</ind>
+      <dep>105.0</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>-2.80458</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.401191</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+    <!-- direcao para manobras no solo -->
+	<animation>
+	  <name>Giro das rodas</name>
+	  <type>rotate</type>
+	  <condition>
+				<less-than>
+					<property>/position/altitude-agl-ft</property>
+					<value>20</value>
+				</less-than>
+			</condition>
+		  <object-name>frontgear</object-name>
+		  <object-name>frontgear_tire</object-name>
+		  <object-name>lampada1</object-name>
+		  <object-name>lampada2</object-name>
+		  <object-name>LeftnoseLandinglight</object-name>
+		  <object-name>RightnoseLandinglight</object-name>
+	    <property>controls/flight/rudder</property>
+	  <factor>-70</factor>
+	  <center>
+	   <x-m>-2.80458</x-m>
+	   <y-m>0</y-m>
+	   <z-m>-0.632616</z-m>
+	  </center>
+	  <axis>
+	    <x>0</x>
+	    <y>0</y>
+	    <z>0.1</z>
+	  </axis>
+	</animation> 
+	
+ <!-- rodas girando -->
+ 
+ <animation>
+  <type>spin</type>
+  <object-name>frontgear_tire</object-name>
+  <property>fdm/jsbsim/gear/unit[0]/wheel-speed-fps</property>
+  <factor>60</factor>
+  <center>
+   <x-m>-2.64984</x-m>
+   <y-m>0</y-m>
+   <z-m>-1.37138</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation> 
+
+ 
+<!-- Trem traseiro esquerdo -->
+ <animation>
+  <type>rotate</type>
+		  <object-name>plgear</object-name>
+		  <object-name>plgear_tire</object-name>
+  <property>gear/gear[1]/position-norm</property>
+   <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>95</dep>
+    </entry>
+    <entry>
+      <ind>0.35</ind>
+      <dep>95</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>0.499157</x-m>
+   <y-m>-2.52151</y-m>
+   <z-m>-0.34835</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <!-- rodas girando -->
+ 
+ <!--Girar roda traseira esquerda -->
+    <animation>
+		<type>spin</type>
+		<object-name>plgear_tire</object-name>
+		<condition>
+			<less-than>
+				<property>/position/altitude-agl-ft</property>
+				<value>20</value>
+			</less-than>
+		</condition>
+		<property>velocities/uBody-fps</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+		<x-m>0.524332</x-m>
+    <y-m> -2.77101</y-m>
+    <z-m>-1.25449</z-m>
+		</center>
+	</animation>      
+ 
+<!-- Trem traseiro direito -->
+ <animation>
+  <type>rotate</type>
+		  <object-name>prgear</object-name>
+		  <object-name>prgear_tire</object-name>
+  <property>gear/gear[2]/position-norm</property>
+   <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>95</dep>
+    </entry>
+    <entry>
+      <ind>0.35</ind>
+      <dep>95</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>0.499157</x-m>
+   <y-m>2.52151</y-m>
+   <z-m>-0.34835</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <!-- rodas girando -->
+ 
+ <!--Girar roda traseira Direita -->
+   <animation>
+		<type>spin</type>
+	<object-name>prgear_tire</object-name>
+		<condition>
+			<less-than>
+				<property>/position/altitude-agl-ft</property>
+				<value>20</value>
+			</less-than>
+		</condition>
+		<property>velocities/uBody-fps</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+      <x-m>0.524332</x-m>
+      <y-m> 2.77101</y-m>
+      <z-m>-1.25449</z-m>
+		</center>
+		</animation>
+  
+	<!-- ######################################### -->
+	<!-- ### ILUMINATION  ILUMINAO  LUZES     #### -->
+	<!-- ######################################### -->
+   
+  <!--navegacao -->
+   <model>
+        <path>Aircraft/EMB-121/Models/Lights/GreenLight.xml</path>
+        <name>Greenlight</name>
+        <offsets>
+            <x-m> -0.240245</x-m>
+            <y-m> 6.89074</y-m>
+            <z-m> 0.302067</z-m>
+        </offsets>
+    </model>
+	
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/RedLight.xml</path>
+        <name>Redlight</name>
+        <offsets>
+            <x-m> -0.240245</x-m>
+            <y-m> -6.89074</y-m>
+            <z-m> 0.302067</z-m>
+        </offsets>
+    </model>
+  
+    <!--strobe -->
+    
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/flash.xml</path>
+        <name>flashright</name>
+        <offsets>
+            <x-m> -0.200032</x-m>
+            <y-m> -6.91076</y-m>
+            <z-m> 0.304253</z-m>
+        </offsets>
+    </model>
+ 
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/flash.xml</path>
+        <name>flashleft</name>
+        <offsets>
+            <x-m> -0.200032</x-m>
+            <y-m> 6.91076</y-m>
+            <z-m> 0.304253</z-m>
+        </offsets>
+    </model>
+ 
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/flash.xml</path>
+        <name>flashtail</name>
+        <offsets>
+            <x-m> 7.96115</x-m>
+            <y-m>0.00520499</y-m>
+            <z-m> 2.94233</z-m>
+        </offsets>
+    </model>
+ 
+ 
+     <!-- trem dianteiro --> 
+    
+       <model>
+        <path>Aircraft/EMB-121/Models/Lights/LandinglightL.xml</path>
+        <name>LeftnoseLandinglight</name>
+        <condition>
+            <equals>
+                <property>gear/gear[0]/position-norm</property>
+                <value type="bool">true</value>
+            </equals>
+            <equals>
+                <property>controls/switches/taxi-lights</property>
+                <value type="bool">true</value>
+            </equals>    
+        </condition>
+        <offsets>
+            <x-m>-3.101592</x-m>
+            <y-m>0.247505</y-m>
+            <z-m>-0.7793</z-m>
+        </offsets>
+    </model>
+ 
+   <model>
+        <path>Aircraft/EMB-121/Models/Lights/LandinglightR.xml</path>
+        <name>RightnoseLandinglight</name>
+        <condition>
+            <equals>
+                <property>gear/gear[0]/position-norm</property>
+                <value type="bool">true</value>
+            </equals>
+            <equals>
+                <property>controls/switches/taxi-lights</property>
+                <value type="bool">true</value>
+            </equals>    
+        </condition>
+        <offsets>
+            <x-m>-3.101592</x-m>
+            <y-m>-0.247505</y-m>
+            <z-m>-0.7793</z-m>
+        </offsets>
+    </model>
+
+      <!-- asas -->
+ 
+     <model>
+        <path>Aircraft/EMB-121/Models/Lights/LandinglightR.xml</path>
+        <name>LeftLandinglight</name>
+        <condition>
+            <equals>
+                <property>controls/switches/landing-lights</property>
+                <value type="bool">true</value>
+            </equals>    
+        </condition>
+        <offsets>
+            <x-m>-0.4094</x-m>
+            <y-m>5.12017</y-m>
+            <z-m>0.09992</z-m>
+        </offsets>
+    </model>
+ 
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/LandinglightL.xml</path>
+        <name>RightLandinglight</name>
+        <condition>
+            <equals>
+                <property>controls/switches/landing-lights</property>
+                <value type="bool">true</value>
+            </equals>    
+        </condition>
+        <offsets>
+            <x-m>-0.4094</x-m>
+            <y-m>-5.08652</y-m>
+            <z-m>0.0954601</z-m>
+        </offsets>
+    </model>
+ 
+
+    <!--superior -->
+
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/beacon.xml</path>
+        <name>Beaconlight.top</name>
+        <offsets>
+            <x-m> 7.1805</x-m>
+            <y-m>0.000492353</y-m>
+            <z-m> 2.94233</z-m>
+        </offsets>
+    </model>
+    
+  <!--inferior 	--> 
+
+    <model>
+        <path>Aircraft/EMB-121/Models/Lights/beacon.xml</path>
+        <name>Beaconlight.bottom</name>
+        <offsets>
+            <x-m>-0.1713</x-m>
+            <y-m> 0.00</y-m>
+            <z-m>-0.744105</z-m>
+        </offsets>
+    </model>
+  
+</PropertyList>
