@@ -20,6 +20,51 @@
         </unload>
     </nasal>
 
+<animation>
+  <name>livery-objects</name>
+  <object-name>door</object-name>
+  <object-name>fuselage</object-name>
+  <object-name>box</object-name>
+  <object-name>disk</object-name>
+  <object-name>cylinder</object-name>
+  <object-name>pa_R</object-name>
+  <object-name>pa_L</object-name>
+  <object-name>prgear</object-name>
+  <object-name>prgear_tire</object-name>
+  <object-name>plgear</object-name>
+  <object-name>plgear_tire</object-name>
+  <object-name>frontgear</object-name>
+  <object-name>frontgear_tire</object-name>
+  <object-name>tf_pin_L</object-name>
+  <object-name>tf_pin_R</object-name>
+  <object-name>leftengine</object-name>
+  <object-name>rightengine</object-name>
+  <object-name>estabilizador</object-name>
+  <object-name>elevator_L</object-name>
+  <object-name>slat3</object-name>
+  <object-name>aileronesquerdo</object-name>
+  <object-name>ailerondireito</object-name>
+  <object-name>flaps_L</object-name>
+  <object-name>flaps_R</object-name>
+  <object-name>elevator_R</object-name>
+  <object-name>slat3</object-name>
+  <object-name>slat2</object-name>
+  <object-name>slat1</object-name>
+  <object-name>slat4</object-name>
+  <object-name>asa</object-name>
+  <object-name>verticalstab</object-name>
+  <object-name>rudder</object-name>
+</animation>
+
+<!-- Set fuselage group's material livery -->
+<animation>
+  <type>material</type>
+  <object-name>livery-objects</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture</texture-prop>
+  <texture>default.png</texture>
+</animation>
+
 <!-- ################################################################## -->
 <!-- sombra do aviao  -->
 <!-- ################################################################## -->

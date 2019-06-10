@@ -1,0 +1,10 @@
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>PT-MAP</name>
+				<texture>Liveries/PT-MAP.png</texture>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>

@@ -1,0 +1,10 @@
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>PT-OUH</name>
+				<texture>Liveries/PT-OUH.png</texture>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>
