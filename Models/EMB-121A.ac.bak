@@ -52353,7 +52353,7 @@ kids 0
 OBJECT poly
 name "asa"
 loc 0.442663 0.217733 7.06689
-texture "textura.png"
+texture "chrome.png"
 crease 45.000000
 numvert 4
 -0.735106 -0.207144 -2.0947
@@ -55415,6 +55415,7 @@ kids 0
 OBJECT poly
 name "asa"
 loc 0.442661 0.217733 -7.06689
+texture "chrome.png"
 crease 45.000000
 numvert 4
 -0.728655 -0.0368771 1.82538
