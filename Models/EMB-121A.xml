@@ -79,7 +79,7 @@
 	<object-name>rudder</object-name>
 	<object-name>cylinder</object-name>
 	<parameters>
-    <normalmap-enabled type="int">1</normalmap-enabled>
+    <normalmap-enabled type="int"><use>/sim/rendering/refl-enable</use></normalmap-enabled>
     <normalmap-dds type="int">0</normalmap-dds>
     <texture n="2">
       <image>Aircraft/EMB-121/Models/NormalMap.png</image>
@@ -88,7 +88,7 @@
       <wrap-t>repeat</wrap-t>
       <internal-format>normalized</internal-format>
     </texture>
-    <reflection-enabled type="int">1</reflection-enabled>
+    <reflection-enabled type="int"><use>/sim/rendering/refl-enable</use></reflection-enabled>
     <reflect-map-enabled type="int">1</reflect-map-enabled>
     <reflection-correction type="float">-0.8</reflection-correction>
     <reflection-fresnel-factor type="float">0.0</reflection-fresnel-factor>
