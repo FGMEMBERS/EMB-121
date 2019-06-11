@@ -1,0 +1,10 @@
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>Default White</name>
+				<texture>Liveries/default.png</texture>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>

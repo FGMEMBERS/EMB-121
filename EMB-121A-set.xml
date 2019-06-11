@@ -28,7 +28,14 @@
 		<startup>
 			<splash-texture>Aircraft/EMB-121/splash.png</splash-texture>
 		</startup>
-     		
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">false</splash>
+        <path>splash.png</path>
+      </preview>
+    </previews>
+
 		<model>
 			<path>Aircraft/EMB-121/Models/EMB-121A.xml</path>
 			<livery>
@@ -290,6 +297,7 @@
 					</item>
 					
 					<item>
+						<enabled>0</enabled>
 						<label>Ground Service Cargo</label>
 						<binding>
 							<command>nasal</command>
@@ -298,6 +306,7 @@
 					</item>
 					
 					<item>
+						<enabled>0</enabled>
 						<label>Ground Service Pax</label>
 						<binding>
 							<command>nasal</command>
@@ -313,9 +322,23 @@
 							<property>instrumentation/mk-viii/serviceable</property>
 						</binding>
 					</item>
+
+					<item>
+						<label>Toggle Reflection Effect (requires model shader enabled)</label>
+						<binding>
+							<command>property-cycle</command>
+							<property>/sim/rendering/refl-enable</property>
+							<value type="int">0</value>
+							<value type="int">1</value>
+						</binding>
+					</item>
 				</menu>
 			</default>
 		</menubar>
+
+		<rendering>
+			<refl-enable type="int">0</refl-enable>
+		</rendering>
 	</sim><!-- FIM DA SECAO SIM -->
 	
 	<!-- Definicoes para o estado dos motores e seus reversores de empuxo -->
@@ -450,9 +473,6 @@
 		<general>
 			<file>Aircraft/EMB-121/Nasal/general.nas</file>
 		</general>
-		<system>
-			<file>Aircraft/EMB-121/Nasal/system.nas</file>
-		</system>
 		<lights>
 			<file>Aircraft/EMB-121/Nasal/lights.nas</file>
 		</lights>
