@@ -297,6 +297,7 @@
 					</item>
 					
 					<item>
+						<enabled>0</enabled>
 						<label>Ground Service Cargo</label>
 						<binding>
 							<command>nasal</command>
@@ -305,6 +306,7 @@
 					</item>
 					
 					<item>
+						<enabled>0</enabled>
 						<label>Ground Service Pax</label>
 						<binding>
 							<command>nasal</command>
