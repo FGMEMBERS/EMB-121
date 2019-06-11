@@ -28,7 +28,14 @@
 		<startup>
 			<splash-texture>Aircraft/EMB-121/splash.png</splash-texture>
 		</startup>
-     		
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">false</splash>
+        <path>splash.png</path>
+      </preview>
+    </previews>
+
 		<model>
 			<path>Aircraft/EMB-121/Models/EMB-121A.xml</path>
 			<livery>
